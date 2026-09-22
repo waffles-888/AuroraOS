@@ -1,7 +1,24 @@
+@font-face {
+  font-family: PDAfont;
+  src: url(assets/fonts/Aller.ttf); /* url of the font */
+}
+
+body {
+  font-family: PDAfont, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 #home {
-  background-image: url('/assets/images/OS-background.webp');
+  background-image: url('/assets/images/OS-background.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -12,7 +29,7 @@
 }
 
 .home-head {
-  color: #030303;
+  color: #fd7b01e0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   text-align: center;
   display: flex;
@@ -20,11 +37,14 @@
   align-items: center;
 }
 
+#github-link {
+  display: block;
+  margin: 0 auto;
+}
+
 .header-box {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
