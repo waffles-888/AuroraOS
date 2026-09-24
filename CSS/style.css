@@ -56,10 +56,11 @@ html, body {
     color: #fd7b01e0;
     display: flex;
     margin-bottom: 20px;
-    justify-content: flex-end;
-    align-items: flex-end;
-    position: fixed;
-    top: 20px;
-    right: 20px;
     text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #fd7b01e0;
 }
