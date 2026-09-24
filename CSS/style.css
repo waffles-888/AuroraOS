@@ -14,6 +14,13 @@ html, body {
   width: 100%;
 }
 
+.github-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
 #home {
   background-image: url('../assets/images/OS-background.JPG');
   background-size: cover;
@@ -41,4 +48,18 @@ html, body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.pet-box{
+    flex-direction: column;
+    font-family: PDAfont, sans-serif;
+    color: #fd7b01e0;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    text-align: center;
 }
