@@ -64,3 +64,11 @@ h1 {
   margin: 0;
   color: #fd7b01e0;
 }
+
+.OS-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  bottom: 0px;
+}
