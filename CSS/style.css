@@ -79,6 +79,27 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   bottom: 0px;
+}
+
+.OS-box {
+  border-radius: 25px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fd7b01e0;
+  justify-content: space-evenly;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+	property1: 5;
+	property2: "16px";
+	property3: "hidden";
 }

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora OS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/style.css">
   </head>
 
   <body id="home">
-    <div class="OS-box"style="border-radius: 25px; position: absolute; width: 100%; display: flex; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.25); color: #fd7b01e0; justify-content: space-evenly">
-      <p style="margin-left: 16px;">
+    <div class="OS-box">
+      <p style="margin-left: 16px; cursor: pointer;" id="welcomeopen">
         Aurora OS
       </p>
       <p id="timeElement" style="margin-right: 16px;">
@@ -20,7 +21,9 @@
 
 
 <div id="window" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border: solid; width: fit-content; border-radius: 16px; flex-direction:column; display: flex; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.25); color: #fd7b01e0; justify-content: space-evenly">
-      <p style="cursor: pointer" id="windowclose">Close</p>
+  <div class="close-button" id="welcomeheader">
+      <p style="cursor: pointer; color: #F4320B;" id="windowclose"><i class="bi bi-x-circle-fill"></i></p>
+      </div>
   <div id="windowheader" style="width: 100%; display: flex; align-items: center; cursor: grab,; justify-content: center; margin-top: 8px;">
   <p>Welcome to Aurora OS!</p>
   </div>
