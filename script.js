@@ -65,22 +65,21 @@ function dragElement(element) {
 }
 
 // close window
-function closeWindow(element) {
-  element.style.display = "none"
+function closeWindow() {
+  document.getElementById("window").style.display = "none"
 }
 
 // open window
-function openWindow(element) {
-  element.style.display = "flex"
+function openWindow() {
+  document.getElementById("window").style.display = "flex"
 }
 
-var welcomeScreenClose = document.querySelector("#welcomeclose")
-welcomeScreenClose.addEventListener("click", function() {
-  closeWindow(welcomeScreen);
+var windowClose = document.querySelector("#windowclose")
+windowClose.addEventListener("click", function() {
+  closeWindow(window);
 });
 
-
-var welcomeScreenOpen = document.querySelector("#welcomeopen")
-welcomeScreenOpen.addEventListener("click", function() {
-  openWindow(welcomeScreen);
+var windowOpen = document.querySelector("#windowopen")
+windowOpen.addEventListener("click", function() {
+  openWindow(window);
 });

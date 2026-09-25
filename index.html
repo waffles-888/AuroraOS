@@ -10,7 +10,7 @@
 
   <body id="home">
     <div class="OS-box">
-      <p style="margin-left: 16px; cursor: pointer;" id="welcomeopen">
+      <p style="margin-left: 16px; cursor: pointer;" id="windowopen">
         Aurora OS
       </p>
       <p id="timeElement" style="margin-right: 16px;">
@@ -20,12 +20,15 @@
     </div>
 
 
-<div id="window" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border: solid; width: fit-content; border-radius: 16px; flex-direction:column; display: flex; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.25); color: #fd7b01e0; justify-content: space-evenly">
-  <div class="close-button" id="welcomeheader">
-      <p style="cursor: pointer; color: #F4320B;" id="windowclose"><i class="bi bi-x-circle-fill"></i></p>
+
+<div id="window" class="window">
+  <div class="close-button" id="close-button">
+      <p id="windowclose" onclick="closeWindow()">
+        <i class="bi bi-x-circle-fill"></i>
+      </p>
       </div>
-  <div id="windowheader" style="width: 100%; display: flex; align-items: center; cursor: grab,; justify-content: center; margin-top: 8px;">
-  <p>Welcome to Aurora OS!</p>
+  <div id="windowheader" class="windowheader">
+  <p class="headertext">Welcome to Aurora OS!</p>
   </div>
   <div class="welcome-box">
     <div id="github-box">
