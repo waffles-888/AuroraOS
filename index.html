@@ -16,19 +16,26 @@
       <p id="timeElement" style="margin-right: 16px;">
         Time
       </p>
-
     </div>
 
+  
+<div id="desktopApps" class="desktopApps">
+  <div class="selected" id="selected">
+    <img src="assets/images/Scanner.webp" style="width: 64px; height: 64px; border-radius: 16px;">
+    <p style="margin: 0px; color: #fd7b01e0;">creature database</p>
+</div>
 
 
 <div id="window" class="window">
-  <div class="close-button" id="close-button">
+  <div id ="header-button" class="header-button">
+    <div class="close-button" id="close-button">
       <p id="windowclose" onclick="closeWindow()">
         <i class="bi bi-x-circle-fill"></i>
       </p>
       </div>
   <div id="windowheader" class="windowheader">
-  <p class="headertext">Welcome to Aurora OS!</p>
+    <p class="welcometext">Welcome to Aurora OS!</p>
+    </div>
   </div>
   <div class="welcome-box">
     <div id="github-box">
@@ -41,8 +48,22 @@
     <img src="assets/images/my_pet.webp" alt="My Pet" width="200" height="200">
     <p>Here's my pet!</p>
   </div>
+</div>
+</div>
+
+<div id="creature-data" class="creature-data">
+  <div id ="creature_data_header-button" class="header-button">
+    <div class="close-button" id="creature_close-button">
+      <p id="creature_windowclose" onclick="closeWindow()">
+        <i class="bi bi-x-circle-fill"></i>
+      </p>
+      </div>
+  </div>
+  <div id="windowheader" class="creature_database_header">
+    <p class="welcometext">Subnautica Creature Database</p>
   </div>
 </div>
+
   </body>
 <script src="script.js"></script>
 </html>

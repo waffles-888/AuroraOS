@@ -11,6 +11,7 @@ setInterval(updatetime, 1000);
 
 // Make the DIV element draggable:
 dragElement(document.getElementById("window"));
+dragElement(document.querySelector("#creature-database"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -83,3 +84,37 @@ var windowOpen = document.querySelector("#windowopen")
 windowOpen.addEventListener("click", function() {
   openWindow(window);
 });
+
+// Icon selection
+function selectIcon(element) {
+  element.classList.add("selected");
+  selectedIcon = element
+} 
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined;
+} 
+
+function handleIconTap(element) {
+  if (element.classList.contains("selected")) {
+    deselectIcon(element)
+    openWindow(Window)
+  } else {
+    selectIcon(element)
+  }
+}
+
+
+// first app
+var databaseScreen = document.querySelector("#creature-data")
+
+var databaseScreenClose = document.querySelector("#creature_close-button")
+
+databaseScreenClose.addEventListener("click", () => closeWindow(databaseScreen));
+
+function openWindow(element) {
+  element.style.display = "flex";
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+}
