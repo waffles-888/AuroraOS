@@ -1,3 +1,22 @@
+// window to front
+var topBar = document.querySelector("#top")
+var biggestIndex = 1;
+
+function openWindow(element) {
+  element.style.display = "flex";
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+}
+
+function handleWindowTap(element) {
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+  deselectIcon(selectedIcon)
+}
+
+
 // OS clock
 function updatetime() {
     var currentTime = new Date().toLocaleString("en-GB", {hour12: true });
@@ -5,13 +24,10 @@ function updatetime() {
     timeText.innerHTML = currentTime;
 }
 setInterval(updatetime, 1000);
-// OS clock
-
-
 
 // Make the DIV element draggable:
 dragElement(document.getElementById("window"));
-dragElement(document.querySelector("#creature-database"));
+dragElement(document.querySelector("#creature-data"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -65,24 +81,21 @@ function dragElement(element) {
   }
 }
 
-// close window
-function closeWindow() {
-  document.getElementById("window").style.display = "none"
+// close and open window
+function closeWindow(element) {
+  element.style.display = "none"
 }
 
-// open window
-function openWindow() {
-  document.getElementById("window").style.display = "flex"
-}
+var welcomeScreen = document.getElementById("window");
 
 var windowClose = document.querySelector("#windowclose")
 windowClose.addEventListener("click", function() {
-  closeWindow(window);
+  closeWindow(welcomeScreen);
 });
 
 var windowOpen = document.querySelector("#windowopen")
 windowOpen.addEventListener("click", function() {
-  openWindow(window);
+  openWindow(welcomeScreen);
 });
 
 // Icon selection
@@ -99,7 +112,7 @@ function deselectIcon(element) {
 function handleIconTap(element) {
   if (element.classList.contains("selected")) {
     deselectIcon(element)
-    openWindow(Window)
+    openWindow(databaseScreen)
   } else {
     selectIcon(element)
   }
@@ -113,8 +126,21 @@ var databaseScreenClose = document.querySelector("#creature_close-button")
 
 databaseScreenClose.addEventListener("click", () => closeWindow(databaseScreen));
 
-function openWindow(element) {
-  element.style.display = "flex";
-  biggestIndex++;  // Increment biggestIndex by 1
-  element.style.zIndex = biggestIndex;
+
+var databaseIcon = document.querySelector("#database-icon")
+  databaseIcon.addEventListener("click", function() {
+  handleIconTap(databaseIcon);
+});
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined;
+}
+
+
+// Handle window tap
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () =>
+    handleWindowTap(element)
+  )
 }
