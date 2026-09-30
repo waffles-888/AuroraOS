@@ -154,7 +154,19 @@ addWindowTapHandling(databaseScreen);
 
 /* deselect icon when clicking outside of it */
 document.addEventListener("click", function(e) {
-  if (screen && !databaseIcon.contains(e.target)) {
+  if (selectedIcon && !databaseIcon.contains(e.target)) {
     deselectIcon(selectedIcon);
   }
+});
+
+/* sonar ping on desktop click */
+document.addEventListener("click", function(e) {
+  const ping = document.createElement("div");
+  ping.classList.add("sonar");
+  ping.style.left = (e.clientX) + "px";
+  ping.style.top = (e.clientY) + "px";
+  document.body.appendChild(ping);
+  ping.addEventListener("animationend", function() {  
+    ping.remove();
+  });
 });

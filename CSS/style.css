@@ -256,3 +256,28 @@ h1 {
 .creature-data {
   width: 60vw;
 }
+
+.sonar {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #03e1fae0;
+  background-color: rgba(3, 225, 250, 0.3);
+  animation: sonar-ping 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes sonar-ping {
+  from {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  to {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
