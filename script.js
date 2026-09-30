@@ -148,16 +148,13 @@ function addWindowTapHandling(element) {
   )
 }
 
-/* sort later
-function initialiseWindow("screen") {
-  var screen = document.querySelector("#" + "welcomeScreen");
-  addWindowTapHandling(welcomeScreen)
-  makeCloseable(welcomeScreen)
-  dragElement(welcomeScreen)
-}
-
-*/
-
 addWindowTapHandling(welcomeScreen);
 
 addWindowTapHandling(databaseScreen);
+
+/* deselect icon when clicking outside of it */
+document.addEventListener("click", function(e) {
+  if (screen && !databaseIcon.contains(e.target)) {
+    deselectIcon(selectedIcon);
+  }
+});
