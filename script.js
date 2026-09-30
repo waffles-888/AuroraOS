@@ -1,6 +1,7 @@
 // window to front
 var topBar = document.querySelector("#top")
 var biggestIndex = 1;
+var selectedIcon = undefined;
 
 function openWindow(element) {
   element.style.display = "flex";
@@ -13,7 +14,9 @@ function handleWindowTap(element) {
   biggestIndex++;  // Increment biggestIndex by 1
   element.style.zIndex = biggestIndex;
   topBar.style.zIndex = biggestIndex + 1;
-  deselectIcon(selectedIcon)
+  if (selectedIcon) {
+    deselectIcon(selectedIcon);
+  }
 }
 
 
@@ -144,3 +147,17 @@ function addWindowTapHandling(element) {
     handleWindowTap(element)
   )
 }
+
+/* sort later
+function initialiseWindow("screen") {
+  var screen = document.querySelector("#" + "welcomeScreen");
+  addWindowTapHandling(welcomeScreen)
+  makeCloseable(welcomeScreen)
+  dragElement(welcomeScreen)
+}
+
+*/
+
+addWindowTapHandling(welcomeScreen);
+
+addWindowTapHandling(databaseScreen);
