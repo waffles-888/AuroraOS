@@ -28,9 +28,7 @@ function updatetime() {
 }
 setInterval(updatetime, 1000);
 
-// Make the DIV element draggable:
-dragElement(document.getElementById("window"));
-dragElement(document.querySelector("#creature-data"));
+
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -91,11 +89,6 @@ function closeWindow(element) {
 
 var welcomeScreen = document.getElementById("window");
 
-var windowClose = document.querySelector("#windowclose")
-windowClose.addEventListener("click", function() {
-  closeWindow(welcomeScreen);
-});
-
 var windowOpen = document.querySelector("#windowopen")
 windowOpen.addEventListener("click", function() {
   openWindow(welcomeScreen);
@@ -107,10 +100,6 @@ function selectIcon(element) {
   selectedIcon = element
 } 
 
-function deselectIcon(element) {
-  element.classList.remove("selected");
-  selectedIcon = undefined;
-} 
 
 function handleIconTap(element) {
   if (element.classList.contains("selected")) {
@@ -124,11 +113,6 @@ function handleIconTap(element) {
 
 // first app
 var databaseScreen = document.querySelector("#creature-data")
-
-var databaseScreenClose = document.querySelector("#creature_close-button")
-
-databaseScreenClose.addEventListener("click", () => closeWindow(databaseScreen));
-
 
 var databaseIcon = document.querySelector("#database-icon")
   databaseIcon.addEventListener("click", function() {
@@ -148,10 +132,6 @@ function addWindowTapHandling(element) {
   )
 }
 
-addWindowTapHandling(welcomeScreen);
-
-addWindowTapHandling(databaseScreen);
-
 /* deselect icon when clicking outside of it */
 document.addEventListener("click", function(e) {
   if (selectedIcon && !databaseIcon.contains(e.target)) {
@@ -170,3 +150,17 @@ document.addEventListener("click", function(e) {
     ping.remove();
   });
 });
+
+/* window initialsation */
+function initializeWindow(screen) {
+  addWindowTapHandling(screen)
+  var closeBtn = screen.querySelector(".close-button");
+  closeBtn.addEventListener("click", function() {
+  closeWindow(screen);
+});
+  dragElement(screen)
+}
+
+/* Allows for window initalisation to work with multiple windows */
+initializeWindow(welcomeScreen);
+initializeWindow(databaseScreen);
