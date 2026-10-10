@@ -164,3 +164,22 @@ function initializeWindow(screen) {
 /* Allows for window initalisation to work with multiple windows */
 initializeWindow(welcomeScreen);
 initializeWindow(databaseScreen);
+
+
+/* intro scene */
+introanimation();
+function introanimation() {
+  var introtext = ["Initializing", "Loading modules", "Starting AuroraOS", "Welcome to AuroraOS"];
+  var introTextElement = document.getElementById("intro-text");
+  var index = 0;
+
+  var timer = setInterval(function() {
+  introTextElement.innerHTML = introtext[index];
+  index++;
+  if (index >= introtext.length) {
+    clearInterval(timer);
+    document.querySelector(".intro").style.display = "none";
+  }
+
+  }, 1000);
+}

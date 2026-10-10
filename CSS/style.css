@@ -281,3 +281,31 @@ h1 {
     opacity: 0;
   }
 }
+
+.intro {
+  position: fixed;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: #000000;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.intro-logo {
+  filter:invert()
+  hue-rotate(170deg);
+}
+
+.intro-text {
+  font-size: 2em;
+  color: #ffffffe0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-top: 20px;
+}
