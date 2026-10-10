@@ -184,3 +184,9 @@ function introanimation() {
   }
   }, 1000);
 }
+
+/* skip intro button */
+var skipButton = document.getElementById("skip-button");
+skipButton.addEventListener("click", function() {
+  document.querySelector(".intro").classList.add("fade-out");
+});

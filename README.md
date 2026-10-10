@@ -17,9 +17,10 @@ There are two ways you can access this site
 # Features
 These are the current site features, I'm proud with how it has turned out and will add more later on.
 
-* A sonar effect on the desktop when clicked
-* The ability to deselect an icon by clicking the empty part of the desktop
-* Apps actually pop out in their own window
+* A sonar effect on the desktop when clicked (WebOS1)
+* The ability to deselect an icon by clicking the empty part of the desktop (WebOS1)
+* Apps actually pop out in their own window (WebOS1)
+* Intro animation (Has a skip button) (WebOS2)
 
 This is a demo of the sonar effect which i am quite proud of:
 <img src="assets/readme_images/sonar_demo.gif">
@@ -28,7 +29,7 @@ This is a demo of the sonar effect which i am quite proud of:
 
 These are the current apps but more will be added in the future
 
-* A simple creature database (Not massive but will be improved on)
+* A simple creature database (Not massive but will be improved on) (WebOS1)
 
 # Credits
 * Bootstrap was used for some icons across this site

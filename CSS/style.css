@@ -323,3 +323,14 @@ h1 {
     visibility: hidden;
   }
 }
+
+#skip-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
