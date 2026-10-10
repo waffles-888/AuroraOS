@@ -179,7 +179,7 @@ function introanimation() {
   if (index >= introtext.length) {
     clearInterval(timer);
     setTimeout(function() {
-    document.querySelector(".intro").style.display = "none";
+    document.querySelector(".intro").classList.add("fade-out");
   }, 1000);
   }
   }, 1000);

@@ -282,6 +282,8 @@ h1 {
   }
 }
 
+/* intro styling */
+
 .intro {
   position: fixed;
   flex-direction: column;
@@ -308,4 +310,16 @@ h1 {
   color: #ffffffe0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   margin-top: 20px;
+}
+
+.intro.fade-out {
+  opacity: 1;
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
