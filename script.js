@@ -124,6 +124,11 @@ function deselectIcon(element) {
   selectedIcon = undefined;
 }
 
+//second app
+var pdaNotesIcon = document.querySelector("#pdanotes-icon")
+pdaNotesIcon.addEventListener("click", function() {
+  handleIconTap(pdaNotesIcon);
+});
 
 // Handle window tap
 function addWindowTapHandling(element) {
@@ -161,11 +166,6 @@ function initializeWindow(screen) {
   dragElement(screen)
 }
 
-/* Allows for window initalisation to work with multiple windows */
-initializeWindow(welcomeScreen);
-initializeWindow(databaseScreen);
-
-
 /* intro scene */
 introanimation();
 function introanimation() {
@@ -190,3 +190,11 @@ var skipButton = document.getElementById("skip-button");
 skipButton.addEventListener("click", function() {
   document.querySelector(".intro").classList.add("fade-out");
 });
+
+/* PDA Notes */
+var pdaNotesScreen = document.querySelector("#pdanotes");
+
+/* Allows for window initalisation to work with multiple windows */
+initializeWindow(welcomeScreen);
+initializeWindow(databaseScreen);
+initializeWindow(pdaNotesScreen);
