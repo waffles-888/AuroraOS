@@ -169,7 +169,7 @@ initializeWindow(databaseScreen);
 /* intro scene */
 introanimation();
 function introanimation() {
-  var introtext = ["Initializing", "Loading modules", "Starting AuroraOS", "Welcome to AuroraOS"];
+  var introtext = ["Initializing...", "Loading modules...", "Starting AuroraOS...", "Welcome to AuroraOS"];
   var introTextElement = document.getElementById("intro-text");
   var index = 0;
 
@@ -178,8 +178,9 @@ function introanimation() {
   index++;
   if (index >= introtext.length) {
     clearInterval(timer);
+    setTimeout(function() {
     document.querySelector(".intro").style.display = "none";
+  }, 1000);
   }
-
   }, 1000);
 }
