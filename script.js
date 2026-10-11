@@ -96,10 +96,12 @@ windowOpen.addEventListener("click", function() {
 
 // Icon selection
 function selectIcon(element) {
+  if (selectedIcon) {
+    deselectIcon(selectedIcon);
+  }
   element.classList.add("selected");
   selectedIcon = element
-} 
-
+}
 
 function handleIconTap(element) {
   if (element.classList.contains("selected")) {
@@ -139,7 +141,7 @@ function addWindowTapHandling(element) {
 
 /* deselect icon when clicking outside of it */
 document.addEventListener("click", function(e) {
-  if (selectedIcon && !databaseIcon.contains(e.target)) {
+  if (selectedIcon && !selectedIcon.contains(e.target)) {
     deselectIcon(selectedIcon);
   }
 });
