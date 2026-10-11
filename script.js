@@ -103,10 +103,10 @@ function selectIcon(element) {
   selectedIcon = element
 }
 
-function handleIconTap(element) {
+function handleIconTap(element, windowToOpen) {
   if (element.classList.contains("selected")) {
     deselectIcon(element)
-    openWindow(databaseScreen)
+    openWindow(windowToOpen)
   } else {
     selectIcon(element)
   }
@@ -118,7 +118,7 @@ var databaseScreen = document.querySelector("#creature-data")
 
 var databaseIcon = document.querySelector("#database-icon")
   databaseIcon.addEventListener("click", function() {
-  handleIconTap(databaseIcon);
+  handleIconTap(databaseIcon, databaseScreen);
 });
 
 function deselectIcon(element) {
@@ -129,7 +129,7 @@ function deselectIcon(element) {
 //second app
 var pdaNotesIcon = document.querySelector("#pdanotes-icon")
 pdaNotesIcon.addEventListener("click", function() {
-  handleIconTap(pdaNotesIcon);
+  handleIconTap(pdaNotesIcon, pdaNotesScreen);
 });
 
 // Handle window tap
