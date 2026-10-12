@@ -195,6 +195,17 @@ skipButton.addEventListener("click", function() {
 
 /* PDA Notes */
 var pdaNotesScreen = document.querySelector("#pdanotes");
+document.getElementById("pdanotes_save-button").addEventListener("click", function() {
+  var notes = document.getElementById("pdanotes-textarea").value;
+  var savemessages = document.getElementById("pdanotes-saved-messages");
+
+  //note saving
+  const notesDiv = document.createElement("div");
+  notesDiv.classList.add("saved-notes");
+  notesDiv.textContent = notes;
+  savemessages.appendChild(notesDiv);
+  textarea.value = "";
+});
 
 /* Allows for window initalisation to work with multiple windows */
 initializeWindow(welcomeScreen);
