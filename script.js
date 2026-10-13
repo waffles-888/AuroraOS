@@ -208,6 +208,16 @@ document.getElementById("pdanotes_save-button").addEventListener("click", functi
   textarea.value = "";
   notesDiv.addEventListener("click", function() {
     textarea.value = notesDiv.textContent;
+    notesDiv.remove();
+  });
+  // note deletion
+  const deletebtn = document.createElement("button");
+  deletebtn.classList.add("delete-note");
+  deletebtn.innerHTML = '<i class="bi bi-x-circle-fill"></i>'
+  notesDiv.appendChild(deletebtn);
+  deletebtn.addEventListener("click", function(e) {
+    e.stopPropagation();
+    notesDiv.remove();
   });
 });
 
