@@ -30,6 +30,7 @@ This is a demo of the sonar effect which i am quite proud of:
 These are the current apps but more will be added in the future
 
 * A simple creature database (Not massive but will be improved on) (WebOS1)
+* A simple notes app (WebOS2)
 
 # Credits
 * Bootstrap was used for some icons across this site

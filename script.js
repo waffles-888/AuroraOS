@@ -193,34 +193,44 @@ skipButton.addEventListener("click", function() {
   document.querySelector(".intro").classList.add("fade-out");
 });
 
+
 /* PDA Notes */
 var pdaNotesScreen = document.querySelector("#pdanotes");
+
+// adding a PDA note to list
 document.getElementById("pdanotes_save-button").addEventListener("click", function() {
   var textarea = document.getElementById("pdanotes-textarea");
-  var notes = textarea.value;
+  createNote(textarea.value);
+  textarea.value = "";
+});
+
+// Keep PDA notes saved
+function createNote(text) {
+  var textarea = document.getElementById("pdanotes-textarea");
   var savemessages = document.getElementById("pdanotes-saved-messages");
 
-  //note saving
+  // note saving
   const notesDiv = document.createElement("div");
   notesDiv.classList.add("saved-notes");
-  notesDiv.textContent = notes;
+  notesDiv.textContent = text;
   savemessages.appendChild(notesDiv);
-  textarea.value = "";
+
+  // click to load
   notesDiv.addEventListener("click", function() {
-    textarea.value = notesDiv.textContent;
+    textarea.value = text;
     notesDiv.remove();
   });
-  // note deletion
+
+  // delete button
   const deletebtn = document.createElement("button");
   deletebtn.classList.add("delete-note");
-  deletebtn.innerHTML = '<i class="bi bi-x-circle-fill"></i>'
+  deletebtn.innerHTML = '<i class="bi bi-x-circle-fill"></i>';
   notesDiv.prepend(deletebtn);
   deletebtn.addEventListener("click", function(e) {
     e.stopPropagation();
     notesDiv.remove();
   });
-});
-
+}
 
 /* Allows for window initalisation to work with multiple windows */
 initializeWindow(welcomeScreen);
