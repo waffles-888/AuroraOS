@@ -366,4 +366,7 @@ h1 {
 
 .delete-note {
   color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
 }

@@ -214,7 +214,7 @@ document.getElementById("pdanotes_save-button").addEventListener("click", functi
   const deletebtn = document.createElement("button");
   deletebtn.classList.add("delete-note");
   deletebtn.innerHTML = '<i class="bi bi-x-circle-fill"></i>'
-  notesDiv.appendChild(deletebtn);
+  notesDiv.prepend(deletebtn);
   deletebtn.addEventListener("click", function(e) {
     e.stopPropagation();
     notesDiv.remove();
