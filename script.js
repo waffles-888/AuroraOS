@@ -214,10 +214,10 @@ function removeNote(text) {
 // adding a PDA note to list
 document.getElementById("pdanotes_save-button").addEventListener("click", function() {
   var textarea = document.getElementById("pdanotes-textarea");
-  createNote(textarea.value);
   if (textarea.value.trim() === "") {
     return;
   }
+  createNote(textarea.value);
   savedNotes.push(textarea.value);
   saveNotes();
   textarea.value = "";
