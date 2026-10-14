@@ -202,11 +202,22 @@ function saveNotes() {
   localStorage.setItem("pdanotes", JSON.stringify(savedNotes));
 }
 
+// remove notes from list
+function removeNote(text) {
+  var position = savedNotes.indexOf(text);
+  if (position !== -1) {
+    savedNotes.splice(position, 1);
+  saveNotes();
+  }
+}
 
 // adding a PDA note to list
 document.getElementById("pdanotes_save-button").addEventListener("click", function() {
   var textarea = document.getElementById("pdanotes-textarea");
   createNote(textarea.value);
+  if (textarea.value.trim() === "") {
+    return;
+  }
   savedNotes.push(textarea.value);
   saveNotes();
   textarea.value = "";
@@ -215,6 +226,7 @@ document.getElementById("pdanotes_save-button").addEventListener("click", functi
 // Keep PDA notes saved
 function createNote(text) {
   var textarea = document.getElementById("pdanotes-textarea");
+
   var savemessages = document.getElementById("pdanotes-saved-messages");
 
   // note saving
@@ -227,6 +239,7 @@ function createNote(text) {
   notesDiv.addEventListener("click", function() {
     textarea.value = text;
     notesDiv.remove();
+    removeNote(text);
   });
 
   // delete button
@@ -237,6 +250,7 @@ function createNote(text) {
   deletebtn.addEventListener("click", function(e) {
     e.stopPropagation();
     notesDiv.remove();
+    removeNote(text);
   });
 }
 
@@ -248,6 +262,7 @@ if (storedNotes) {
     createNote(note);
   });
 }
+
 
 /* Allows for window initalisation to work with multiple windows */
 initializeWindow(welcomeScreen);
