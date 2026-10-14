@@ -241,7 +241,13 @@ function createNote(text) {
 }
 
 // load saved notes on page load
-
+var storedNotes = localStorage.getItem("pdanotes")
+if (storedNotes) {
+  savedNotes = JSON.parse(storedNotes);
+  savedNotes.forEach(function(note) {
+    createNote(note);
+  });
+}
 
 /* Allows for window initalisation to work with multiple windows */
 initializeWindow(welcomeScreen);
