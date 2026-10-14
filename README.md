@@ -1,5 +1,5 @@
 # AuroraOS
-<img src="assets/readme_images/readme_preview_image.png">
+<img src="assets/readme_images/readme_preview.png">
 
 # What is this
 This is a WebOS site I created for the stardance mission WebOS. This WebOS is themed around subnautica and currently has some simple but still good features.
@@ -19,18 +19,30 @@ These are the current site features, I'm proud with how it has turned out and wi
 
 * A sonar effect on the desktop when clicked (WebOS1)
 * The ability to deselect an icon by clicking the empty part of the desktop (WebOS1)
-* Apps actually pop out in their own window (WebOS1)
+* Apps pop out in their own window (WebOS1)
 * Intro animation (Has a skip button) (WebOS2)
+* Notes save in the browser after refresh (WebOS2)
 
-This is a demo of the sonar effect which i am quite proud of:
+## This is a demo of the sonar effect which i am quite proud of:
 <img src="assets/readme_images/sonar_demo.gif">
+
+## This is the notes app:
+<img src="assets/readme_images/readme_notes.png">
 
 # Avaliable apps
 
 These are the current apps but more will be added in the future
 
 * A simple creature database (Not massive but will be improved on) (WebOS1)
-* A simple notes app (WebOS2)
+* A notes app (WebOS2)
+
+# How to use
+* Double click an icon and the app will open
+* Windows can be dragged from their title bar
+## How to use notes
+* Saved notes can be deleted with the red X
+* Notes are saved locally
+* Click a saved note to load it into the text area and edit it
 
 # Credits
 * Bootstrap was used for some icons across this site
