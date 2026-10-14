@@ -193,14 +193,22 @@ skipButton.addEventListener("click", function() {
   document.querySelector(".intro").classList.add("fade-out");
 });
 
-
 /* PDA Notes */
 var pdaNotesScreen = document.querySelector("#pdanotes");
+
+// Saves notes to browser
+var savedNotes = [];
+function saveNotes() {
+  localStorage.setItem("pdanotes", JSON.stringify(savedNotes));
+}
+
 
 // adding a PDA note to list
 document.getElementById("pdanotes_save-button").addEventListener("click", function() {
   var textarea = document.getElementById("pdanotes-textarea");
   createNote(textarea.value);
+  savedNotes.push(textarea.value);
+  saveNotes();
   textarea.value = "";
 });
 
@@ -231,6 +239,9 @@ function createNote(text) {
     notesDiv.remove();
   });
 }
+
+// load saved notes on page load
+
 
 /* Allows for window initalisation to work with multiple windows */
 initializeWindow(welcomeScreen);
